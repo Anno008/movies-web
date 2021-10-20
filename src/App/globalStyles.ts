@@ -1,14 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-body {
-  overflow: overlay;
-
-}
   html, body, #root {
       margin: 0;
       padding: 0;
       height: 100%;
+      overflow: overlay;
   }
 
   *::-webkit-scrollbar {

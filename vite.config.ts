@@ -11,6 +11,6 @@ export default defineConfig({
     }
   },
   define: {
-    "process?.env?.VITE_APP_TESTS": process.env.VITE_APP_TESTS
+    "process.env.VITE_APP_TESTS": process.env.VITE_APP_TESTS
   }
 });

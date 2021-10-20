@@ -1,9 +1,10 @@
 import React from "react";
 
-import { Star, Search } from "react-feather";
+import { Star, Search, Frown } from "react-feather";
 import { useLocation } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
 
+import { kathyLeavingRoute, searchMoviesRoute, upcomingMoviesRoute } from "../routes";
 import { FlexGrid, Paragraph, NavLinkWithoutDecoration } from "~/components/atoms";
 import ThemeSwitch from "~/components/ThemeSwitch";
 import locators from "~/testUtils/locators";
@@ -33,28 +34,42 @@ const Navbar = (): JSX.Element => {
     useTextShadow: active
   });
 
-  const upcomingMoviesRouteActive = pathname === "/";
-  const searchMoviesRouteActive = pathname === "/search";
+  const getIsActiveRoute = (currentRoute: string): boolean => currentRoute === pathname;
+
   return (
     <NavbarContainer {...setTestId(locators.navbar)}>
       <FlexGrid flex="1" justifyContent="flex-start" gap="10px" alignItems="center">
-        <NavLinkWithoutDecoration to="/" {...setTestId(locators.navbarUpcomingMovies)}>
+        <NavLinkWithoutDecoration
+          to={upcomingMoviesRoute}
+          {...setTestId(locators.navbarUpcomingMovies)}>
           <FlexGrid flexDirection="column" alignItems="center" justifyContent="center">
-            <Star color={getActiveColor(upcomingMoviesRouteActive)} />
+            <Star color={getActiveColor(getIsActiveRoute(upcomingMoviesRoute))} />
             <Paragraph
-              {...getActiveParagraphProps(upcomingMoviesRouteActive)}
+              {...getActiveParagraphProps(getIsActiveRoute(upcomingMoviesRoute))}
               transition="color 0.3s ease-in-out">
               Upcoming movies
             </Paragraph>
           </FlexGrid>
         </NavLinkWithoutDecoration>
-        <NavLinkWithoutDecoration to="/search" {...setTestId(locators.navbarSearchMovies)}>
+        <NavLinkWithoutDecoration
+          to={searchMoviesRoute}
+          {...setTestId(locators.navbarSearchMovies)}>
           <FlexGrid flexDirection="column" alignItems="center" justifyContent="center">
-            <Search color={getActiveColor(searchMoviesRouteActive)} />
+            <Search color={getActiveColor(getIsActiveRoute(searchMoviesRoute))} />
             <Paragraph
-              {...getActiveParagraphProps(searchMoviesRouteActive)}
+              {...getActiveParagraphProps(getIsActiveRoute(searchMoviesRoute))}
               transition="color 0.3s ease-in-out">
               Search Movies
+            </Paragraph>
+          </FlexGrid>
+        </NavLinkWithoutDecoration>
+        <NavLinkWithoutDecoration to={kathyLeavingRoute}>
+          <FlexGrid flexDirection="column" alignItems="center" justifyContent="center">
+            <Frown color={getActiveColor(getIsActiveRoute(kathyLeavingRoute))} />
+            <Paragraph
+              {...getActiveParagraphProps(getIsActiveRoute(kathyLeavingRoute))}
+              transition="color 0.3s ease-in-out">
+              Kathy leaving
             </Paragraph>
           </FlexGrid>
         </NavLinkWithoutDecoration>

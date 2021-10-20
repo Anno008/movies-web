@@ -21,7 +21,7 @@ export const Paragraph: React.FC<ParagraphProps> = styled.p<ParagraphProps>`
     useTextShadow &&
     `text-shadow: -1px -1px 0 ${theme.textShadowColor}, 1px -1px 0 ${theme.textShadowColor}, -1px 1px 0 ${theme.textShadowColor}, 1px 1px 0 ${theme.textShadowColor}`};
   ${({ transition }) => transition && `transition: ${transition};`}
-  ${({ zIndex }) => zIndex && `z-index: ${zIndex};`} /* text-shadow:0px 0px 1px black; */
+  ${({ zIndex }) => zIndex && `z-index: ${zIndex};`}
 `;
 
 interface HeadingProps {
@@ -34,6 +34,10 @@ export const H1 = styled.h1<HeadingProps>`
   ${({ color, theme }) => `color: ${color ? color : theme.primaryTextColor};`}
 `;
 
+export const H2 = styled.h2<HeadingProps>`
+  ${({ margin }) => margin && `margin: ${margin};`}
+  ${({ color, theme }) => `color: ${color ? color : theme.primaryTextColor};`}
+`;
 interface LabelProps {
   bold?: boolean;
   color?: string;
