@@ -22,6 +22,8 @@ a. yarn
   * `yarn lint` -> goes through the code and checks for linting issues.
   * `yarn lint:types` -> goes through the code and checks for typescript violations.
   * `yarn lint:fix` -> goes through the code and checks for linting issues and fixes them where possible.
+  * `yarn storybook` -> run the local storybook server to view the stories
+  * `yarn build-storybook` -> generate storybook
 
 ## E2E tests
 Running E2E tests locally:
@@ -35,3 +37,5 @@ Running E2E tests locally:
 * react-router-dom -> navigation library
 * eslint -> static analyzer, validates code against defined rules
 * jest -> test runner
+* cypress -> end to end testing framework 
+* storybook -> visually testing ui components in isolation
