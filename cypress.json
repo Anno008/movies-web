@@ -1,0 +1,8 @@
+{
+    "testFiles": "**/*.test.{js,ts,jsx,tsx}",
+    "integrationFolder": "cypress/integration",
+    "retries": {
+        "runMode": 2,
+        "openMode": 0
+    }
+}

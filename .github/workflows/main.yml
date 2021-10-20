@@ -1,0 +1,36 @@
+name: Verify, build and deploy to firebase
+
+on:
+  push:
+    branches: [ development, master ]
+
+jobs:
+  build:
+      runs-on: macos-latest
+      steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: 
+          yarn
+      - name: Lint
+        run:
+            yarn lint
+      - name: TSC
+        run: 
+            yarn lint:types
+      - name: Run tests
+        run:
+            yarn test:coverage
+      - name: build
+        run: yarn build
+      - name: Install firebase
+        run:
+            yarn global add firebase-tools
+      - name: Firebase deploy
+        run: |
+          firebase use movies-3e666 --token ${{ secrets.FIREBASE_TOKEN }}
+          firebase deploy --only hosting -m "Pipe $CI_PIPELINE_ID Build $CI_BUILD_ID" --token ${{ secrets.FIREBASE_TOKEN }}
