@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { Frown } from "react-feather";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 
 import { FlexGrid, H1, H2, MainLayout } from "~/components/atoms";
 import { Blink } from "~/components/atoms/Animations";
@@ -18,7 +18,7 @@ type TimeLeft = {
 };
 
 const calculateTimeLeft = (): TimeLeft | undefined => {
-  const difference = +new Date(`10/29/2021`) - +new Date();
+  const difference = +new Date(`10/29/2021 17:00:00`) - +new Date();
 
   if (difference > 0) {
     return {
@@ -31,6 +31,7 @@ const calculateTimeLeft = (): TimeLeft | undefined => {
 };
 
 const KathyLeavingPage = (): JSX.Element => {
+  const theme = useTheme();
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -50,7 +51,9 @@ const KathyLeavingPage = (): JSX.Element => {
           <BlinkingH2 margin="0">{timeLeft.seconds} seconds</BlinkingH2>
         </FlexGrid>
       ) : (
-        <Frown />
+        <FlexGrid justifyContent="center" flex="1">
+          <Frown color={theme.primaryTextColor} size={120} />
+        </FlexGrid>
       )}
     </MainLayout>
   );

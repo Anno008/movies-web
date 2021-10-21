@@ -31,6 +31,7 @@ const Navbar = (): JSX.Element => {
 
   const getActiveParagraphProps = (active: boolean) => ({
     color: getActiveColor(active),
+    textAlign: "center",
     useTextShadow: active
   });
 

@@ -6,5 +6,9 @@ export const CssGrid = styled.div`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 30px;
+
+  @media (max-width: 624px) {
+    grid-template-columns: 1fr;
+  }
 `;

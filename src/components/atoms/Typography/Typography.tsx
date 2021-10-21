@@ -9,6 +9,7 @@ interface ParagraphProps {
   useTextShadow?: boolean;
   transition?: string;
   zIndex?: string;
+  textAlign?: string;
 }
 
 export const Paragraph: React.FC<ParagraphProps> = styled.p<ParagraphProps>`
@@ -22,6 +23,7 @@ export const Paragraph: React.FC<ParagraphProps> = styled.p<ParagraphProps>`
     `text-shadow: -1px -1px 0 ${theme.textShadowColor}, 1px -1px 0 ${theme.textShadowColor}, -1px 1px 0 ${theme.textShadowColor}, 1px 1px 0 ${theme.textShadowColor}`};
   ${({ transition }) => transition && `transition: ${transition};`}
   ${({ zIndex }) => zIndex && `z-index: ${zIndex};`}
+  ${({ textAlign }) => textAlign && `text-align: ${textAlign};`}
 `;
 
 interface HeadingProps {

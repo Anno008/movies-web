@@ -10,10 +10,10 @@ const GlobalStyle = createGlobalStyle`
 
   *::-webkit-scrollbar {
     width: 12px;
+    box-sizing: border-box;
   }
 
   *::-webkit-scrollbar-track {
-    background: #f1f1f1; 
     ${({ theme }) => `background: ${theme.primaryBackgroundColor};`}
   }
   
