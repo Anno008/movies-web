@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "movies-3e666"
+  },
+  "targets": {
+    "movies-3e666": {
+      "hosting": {
+        "movies": [
+          "movies-3e666"
+        ],
+        "movies-storybook": [
+          "movies-storybook"
+        ]
+      }
+    }
   }
 }

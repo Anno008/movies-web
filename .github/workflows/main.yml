@@ -25,12 +25,13 @@ jobs:
       - name: Run tests
         run:
             yarn test:coverage
-      - name: build
+      - name: build movies
         run: yarn build
+      - name: build storybook
+        run: yarn build-storybook
       - name: Install firebase
         run:
             yarn global add firebase-tools
-      - name: Firebase deploy
+      - name: Firebase deploy movies app and storybook
         run: |
-          firebase use movies-3e666 --token ${{ secrets.FIREBASE_TOKEN }}
           firebase deploy --only hosting -m "Pipe $CI_PIPELINE_ID Build $CI_BUILD_ID" --token ${{ secrets.FIREBASE_TOKEN }}
