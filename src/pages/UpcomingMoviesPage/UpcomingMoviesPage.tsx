@@ -4,6 +4,7 @@ import { Waypoint } from "react-waypoint";
 
 import { fetchUpcomingMovies } from "~/api/services/MovieService";
 import { CssGrid, MainLayout } from "~/components/atoms";
+import Loader from "~/components/Loader";
 import MovieCard from "~/components/MovieCard";
 import locators from "~/testUtils/locators";
 import { Movie, MoviesData } from "~/types";
@@ -34,6 +35,7 @@ const UpcomingMoviesPage = (): JSX.Element => {
       gap="20px"
       contentContainerTestId={locators.upcomingMoviesPageContainer}>
       <CssGrid>{movies && movies.results.map(m => <MovieCard key={m.id} {...m} />)}</CssGrid>
+      {isLoading && <Loader />}
       <Waypoint
         onEnter={() => {
           !isLoading && setPage(page + 1);
