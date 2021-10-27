@@ -31,12 +31,12 @@ interface HeadingProps {
   color?: string;
 }
 
-export const H1 = styled.h1<HeadingProps>`
+export const H1: React.FC<HeadingProps> = styled.h1<HeadingProps>`
   ${({ margin }) => margin && `margin: ${margin};`}
   ${({ color, theme }) => `color: ${color ? color : theme.primaryTextColor};`}
 `;
 
-export const H2 = styled.h2<HeadingProps>`
+export const H2: React.FC<HeadingProps> = styled.h2<HeadingProps>`
   ${({ margin }) => margin && `margin: ${margin};`}
   ${({ color, theme }) => `color: ${color ? color : theme.primaryTextColor};`}
 `;

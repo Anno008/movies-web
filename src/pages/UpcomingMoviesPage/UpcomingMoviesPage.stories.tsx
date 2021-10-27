@@ -1,9 +1,8 @@
 import React from "react";
 
-import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import UpcomingMoviesPage from "./UpcomingMoviesPage";
-import themeDecorator from "~/storybookDecorators/themeDecorator";
 
 export default {
   title: "pages/UpcomingMoviesPage",
@@ -12,8 +11,4 @@ export default {
 
 const Template: ComponentStory<typeof UpcomingMoviesPage> = () => <UpcomingMoviesPage />;
 
-export const UpcomingMoviesPageLightTheme = Template.bind({});
-UpcomingMoviesPageLightTheme.decorators = [(Story: Story) => themeDecorator(Story, "light")];
-
-export const UpcomingMoviesPageDarkTheme = Template.bind({});
-UpcomingMoviesPageDarkTheme.decorators = [(Story: Story) => themeDecorator(Story, "dark")];
+export const UpcomingMoviesPageStory = Template.bind({});
