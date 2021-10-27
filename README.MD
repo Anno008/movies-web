@@ -1,12 +1,10 @@
 # Movies App
-Movies app displaying upcoming movies from TMDb
+Movies app displaying upcoming movies from TMDb. The site can be viewed on the following link: https://movies-3e666.web.app/, while the storybook for the components is available on: https://movies-storybook.web.app/
 
 ## Setting up development environment
 * Install node, yarn
 * Editor VSCode
 * Extensions: Eslint
-
-## CI/CD
 
 ## Getting Started
 Before running any of the scripts listed bellow, it is necessary to have all the packages installed, a.k.
@@ -24,6 +22,9 @@ a. yarn
   * `yarn lint:fix` -> goes through the code and checks for linting issues and fixes them where possible.
   * `yarn storybook` -> run the local storybook server to view the stories
   * `yarn build-storybook` -> generate storybook
+
+## CI/CD
+Is executed on github via github actions. It installs the dependencies, lint the code, run the tests and deploy the sites to firebase hosting
 
 ## E2E tests
 Running E2E tests locally:
