@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Star, Search, Frown } from "react-feather";
+import { Star, Search } from "react-feather";
 import { useLocation } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
 
-import { kathyLeavingRoute, searchMoviesRoute, upcomingMoviesRoute } from "../routes";
+import { searchMoviesRoute, upcomingMoviesRoute } from "../routes";
 import { FlexGrid, Paragraph, NavLinkWithoutDecoration } from "~/components/atoms";
 import ThemeSwitch from "~/components/ThemeSwitch";
 import locators from "~/testUtils/locators";
@@ -61,16 +61,6 @@ const Navbar = (): JSX.Element => {
               {...getActiveParagraphProps(getIsActiveRoute(searchMoviesRoute))}
               transition="color 0.3s ease-in-out">
               Search Movies
-            </Paragraph>
-          </FlexGrid>
-        </NavLinkWithoutDecoration>
-        <NavLinkWithoutDecoration to={kathyLeavingRoute}>
-          <FlexGrid flexDirection="column" alignItems="center" justifyContent="center">
-            <Frown color={getActiveColor(getIsActiveRoute(kathyLeavingRoute))} />
-            <Paragraph
-              {...getActiveParagraphProps(getIsActiveRoute(kathyLeavingRoute))}
-              transition="color 0.3s ease-in-out">
-              Kathy leaving
             </Paragraph>
           </FlexGrid>
         </NavLinkWithoutDecoration>
