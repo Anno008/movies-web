@@ -2,7 +2,7 @@ import locators from "~/testUtils/locators";
 
 describe("Navbar e2e tests", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000");
+    cy.visit("/");
   });
 
   it("Should display upcoming movies, search movies and theme switch", () => {

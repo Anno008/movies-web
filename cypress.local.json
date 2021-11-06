@@ -1,0 +1,9 @@
+{
+    "testFiles": "**/*.test.{js,ts,jsx,tsx}",
+    "baseUrl": "http://localhost:3000",
+    "integrationFolder": "cypress/integration",
+    "retries": {
+        "runMode": 2,
+        "openMode": 0
+    }
+}

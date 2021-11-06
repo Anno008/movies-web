@@ -4,7 +4,7 @@ import { LightTheme } from "~/theme/LightTheme";
 
 describe("Theme switch e2e tests", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000");
+    cy.visit("/");
   });
 
   it("Should change icon on theme change", () => {

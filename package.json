@@ -10,8 +10,8 @@
     "test": "cross-env VITE_APP_TESTS=true jest ./src",
     "test:coverage": "yarn test --coverage",
     "test:coverage:open": "opener ./coverage/lcov-report/index.html",
-    "test:e2e:local": "cross-env cypress_host='localhost:3000' npx cypress open",
-    "test:e2e:local:ci": "cross-env cypress_host='localhost:3000' npx cypress run",
+    "test:e2e:ci:local": "cross-env npx cypress run --config-file cypress.local.json",
+    "test:e2e:local": "cross-env npx cypress open --config-file cypress.local.json",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
